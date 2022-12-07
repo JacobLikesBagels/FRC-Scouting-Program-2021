@@ -1,5 +1,6 @@
 package me.lowen.jacob.Components;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import me.lowen.jacob.Components.DebugThings.ConsoleFrame;
+import me.lowen.jacob.Components.MenuBars.DataMenu;
 import me.lowen.jacob.Components.MenuBars.FileMenu;
 import me.lowen.jacob.Components.MenuBars.FilterSortMenu;
 import me.lowen.jacob.Components.MenuBars.HelpMenu;
@@ -66,6 +69,7 @@ public class MainMenuFrame extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				ConsoleFrame.output("clearing filters", Color.WHITE);
 				resetFilters.setVisible(false);
 				teamNumberInput.setText("");
 				GeneralUtilities.resetMainFrame();
@@ -91,6 +95,7 @@ public class MainMenuFrame extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				resetFilters.setVisible(true);
 				String TNI = teamNumberInput.getText();
+				ConsoleFrame.output("Search for team numbers: " + TNI, Color.WHITE);
 				if (TNI.split("\\s+").length > 0) {
 					ArrayList<Integer> tNums = new ArrayList<Integer>();
 					for (String s : TNI.split("\\s+")) {
@@ -120,6 +125,7 @@ public class MainMenuFrame extends JFrame{
 		JMenuBar mb = new JMenuBar();
 		mb.add(new FileMenu());
 		mb.add(new FilterSortMenu());
+		mb.add(new DataMenu());
 		mb.add(new HelpMenu());
 		return mb;
 		

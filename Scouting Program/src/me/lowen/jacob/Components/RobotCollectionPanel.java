@@ -16,6 +16,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import me.lowen.jacob.TestingMain;
+import me.lowen.jacob.Components.DebugThings.ConsoleFrame;
 import me.lowen.jacob.Utils.GeneralUtilities;
 import me.lowen.jacob.Utils.SerializeObject;
 
@@ -109,6 +110,7 @@ public class RobotCollectionPanel extends JPanel implements KeyListener{
 	}
 	
 	public void save(Map<Integer, Robot> storage) {
+		ConsoleFrame.output("Attempting to save data...", Color.WHITE);
 		int teamNum = teamNumber;
 		String shootHeight = heightBox.getText();
 		String shootRange = rangeBox.getText();
@@ -122,11 +124,11 @@ public class RobotCollectionPanel extends JPanel implements KeyListener{
 		storage.put(teamNum, robot);
 		Object readObj = SerializeObject.ReadObjectFromFile(new File(tmpdir + System.getProperty("file.separator") + "storedrobots.txt"));
 		if (readObj == null) {
-			System.out.println("equals null");
+			ConsoleFrame.output("This is the first time you're saving data, making new file...", Color.WHITE);
 		SerializeObject.Serialize(new File(tmpdir + System.getProperty("file.separator") + "storedrobots.txt"), storage);
 		} else {
 			System.out.println("not null");
-			
+			ConsoleFrame.output("You already have data saved, adding new data to old...", Color.WHITE);
 			storage.putAll((Map<Integer, Robot>) readObj);
 			SerializeObject.Serialize(new File(tmpdir + System.getProperty("file.separator") + "storedrobots.txt"), storage);
 		}

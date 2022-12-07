@@ -37,7 +37,9 @@ public class GeneralUtilities {
 			String[] vs2 = {bot.shootHeight, bot.shootRange, String.valueOf(bot.climbHeight), bot.autonMeasure, bot.extraNotes};
 			for (int i2 = 0; i2 < vs.length; i2 ++) {
 				//If the two values dont equal eachother AND the value doesnt ask to be ignored, dont add the robot
-				if (!(vs[i2].equalsIgnoreCase(vs2[i2]))) {
+				//this line below orginally had .equas ignnore case and no .tolowercases
+				System.out.println(vs2[i2]);
+				if (!(vs2[i2].toLowerCase().contains(vs[i2].toLowerCase()))) {
 					if (!(vs[i2].equalsIgnoreCase("IGNORETHISVALUEFORTESTINGWEDONTCAREABOUTIT"))) {
 					
 					passTest = false;
@@ -145,11 +147,11 @@ public class GeneralUtilities {
 	        }
 	        
 	    }
+		//delete is you made sure this works once
 		for (Integer key: allRobots.keySet()) {
-		    System.out.println("key : " + key);
-		    System.out.println("value : " + allRobots.get(key));
+		    
 		}
-		System.out.println("reutring robot");
+		
 		return allRobots;
 	}
 

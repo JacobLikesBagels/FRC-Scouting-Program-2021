@@ -18,8 +18,8 @@ public class AddMoreDataFrame extends JFrame{
 
 	public AddMoreDataFrame() {
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setSize(200, 150);
-		this.setLocationRelativeTo(null);
+		//this.setSize(100, 160);
+		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 		//mainPanel.add(new JTextField());
@@ -73,6 +73,8 @@ public class AddMoreDataFrame extends JFrame{
 		
 		
 		this.add(mainPanel);
+		this.pack();
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 	private void disposeOfThisFrame() {
@@ -106,7 +108,7 @@ public class AddMoreDataFrame extends JFrame{
 						}
 			}}
 		}}
-			System.out.println(":adding");
+//			ConsoleFrame
 		for (String teamNumbers: blues) {
 			collectionPanel.add(new RobotCollectionPanel(collectionPanel, Integer.parseInt(teamNumbers), Color.BLUE));
 		}

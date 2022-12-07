@@ -29,17 +29,17 @@ public class FilterSortMenu extends JMenu{
 		
 		super("Filter");
 		this.setMnemonic(KeyEvent.VK_S);
-		shootHeightPanel = new valueIsPanel("Shoot Height", "Equals");
-		shootRangePanel = new valueIsPanel("Shoot Range", "Equals");
+		shootHeightPanel = new valueIsPanel("Shoot Height", "Contains");
+		shootRangePanel = new valueIsPanel("Shoot Range", "Contains");
 			
-		climbHeightPanel = new valueIsPanel("Climb Height", "Equals");
-		autonRankPanel = new valueIsPanel("Autonomous Rank", "Equals");
+		climbHeightPanel = new valueIsPanel("Climb Height", "Contains");
+		autonRankPanel = new valueIsPanel("Autonomous Rank", "Contains");
 		extraNotesPanel = new valueIsPanel("Extra Notes", "Contains");
 		
 		JMenuItem refresh = new JMenuItem("Clear", KeyEvent.VK_C);
 		refresh.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent ev) {
-		    		
+		    		GeneralUtilities.resetMainFrame();
 		            clearBoxes();
 		    	
 		    }
@@ -64,7 +64,7 @@ public class FilterSortMenu extends JMenu{
 		JMenuItem submit = new JMenuItem("Submit", KeyEvent.VK_S);
 		submit.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent ev) {
-		    	
+		    	//I haven't a clue on why I chose to do it this way... this all seems garbage
 		    	String sh = shootHeightPanel.inputBox.getText();
 		    	if (sh == null || sh.equalsIgnoreCase(""))
 		    		sh = "IGNORETHISVALUEFORTESTINGWEDONTCAREABOUTIT";
