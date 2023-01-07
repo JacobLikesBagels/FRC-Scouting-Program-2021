@@ -3,6 +3,7 @@ A scouting program designed for FIRST Robotics events in 2021.
 ### Features:
 - Record data for up 6 teams at once
 - Pre-set hotkeys for quicker data collection and retrival
+- Easiley import, export, and clear data with a few clicks
 - Search for one or multiple teams with a built in search bar
 - Easiley filter team data by any of the recorded values
 
@@ -15,4 +16,4 @@ You can run it by double clicking the jar file or via the command line
 ### Usage Tips:
 - Press "Add More Data" to well... add more data
 - To save data, press Shift + S (Yes I understand this is a garbage system, I might fix it eventually)
-- While viewing data, you can reset current filters or searches by going to File > Refresh. Or press the 'X' button to the right of the search button
+- While viewing data, you can reset current filters or searches by going to File > Refresh, or going to Filter > Clear, or press the 'X' button to the right of the search button
