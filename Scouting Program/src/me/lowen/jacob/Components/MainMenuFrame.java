@@ -42,7 +42,7 @@ public class MainMenuFrame extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				new AddMoreDataFrame();
+				new NewAddMoreDataFrame();
 				
 			}
 			

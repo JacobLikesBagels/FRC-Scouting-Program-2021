@@ -12,6 +12,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import me.lowen.jacob.Components.MainMenuFrame;
+import me.lowen.jacob.Components.NewAddMoreDataFrame;
 import me.lowen.jacob.Components.Robot;
 import me.lowen.jacob.Components.RobotCollectionPanel;
 import me.lowen.jacob.Components.RobotDisplayFrame;
@@ -41,11 +42,9 @@ public static JPanel panel;
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} 
 		ConsoleFrame.debug = new ConsoleFrame();
-		
 //		ConsoleFrame.debug.setVisible(true);
 		String tmpdir = System.getProperty("java.io.tmpdir");
 		Object readObj = SerializeObject.ReadObjectFromFile(new File(tmpdir + System.getProperty("file.separator") + "storedrobots.txt"));

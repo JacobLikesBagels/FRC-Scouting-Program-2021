@@ -15,7 +15,6 @@ import me.lowen.jacob.Components.DebugThings.ConsoleFrame;
 public class SerializeObject {
 
 	public SerializeObject() {
-		// TODO Auto-generated constructor stub
 	}
 	public static void Serialize(File path, Object obj) {
 		
